@@ -1,0 +1,20 @@
+/*** The following are the color theme options for the dark theme ***/
+
+/*** main ***/
+body { background-color: #303030; }
+body, body a { color: #CACACA; }
+/*** header ***/
+div.header .rtext, div.header .rtext a { color: #CACACA; }
+/*** user menu ***/
+div.umenu div a { color: #CACACA; }
+div.umenu div a:hover { color: #6C6C6C; }
+div.umenu div.current, div.umenu div.current a, div.umenu div:hover { background: #FFFFFF; color: #454545; }
+/*** listview ***/
+select.listview { border: 1px solid #ACACAC; background-color: #303030; }
+select.listview, select.listview option { color: #CACACA; }
+/*** drop down ***/
+select.dropdown { border: 1px solid #ACACAC; background-color: #303030; }
+select.dropdown, select.dropdown option { color: #CACACA; }
+/*** column item display ***/
+.citem:hover { color: #6C6C6C; }
+.citem_current, .citem:hover { background: #FFFFFF; color: #454545; }

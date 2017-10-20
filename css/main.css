@@ -1,0 +1,221 @@
+/***** region: main description *****/
+/* basic layout */
+body, table, pre, code, .code { font-size: 12px; }
+body { width: 100%; height: 100%; overflow: hidden; }
+table { width: 100%; border-collapse: collapse; border-spacing: 0; }
+code, .code { white-space: nowrap; }
+.noscript, .noscript a { font-weight: bold; color: #AA0000; }
+/* main body div */
+div.main { width: 100%; height: 100%; margin: 0; padding: 0; position: absolute; top: 0; right: 0; left: 0; bottom: 0; }
+/* NOTE: to simulate 'float:middle' for .ctext, divs will need to be in the order of .ltext, .rtext, .ctext in the HTML */
+.ltext { float: left; text-align: left; }
+.ctext { margin-left: auto; margin-right: auto; text-align: center; }
+.rtext { float: right; text-align: right; }
+/* header */
+div.header { width: 100%; height: 4.25em; position: absolute; top: 0; right: 0; left: 0; white-space: nowrap; display: table; }
+div.header .ltext { font-size: 30px; padding: 0.25em 0.25em 0 0.4em; white-space: nowrap; display: table-cell; width: auto; float: none; }
+div.header .rtext { font-size: 16px; padding: 1em 0.5em 0 0; white-space: nowrap; display: table-cell; width: auto; float: none; }
+div.header .rtext img { border: 0; display: inline-block; position: relative; top: 0.2em; padding-right: 0.5em; }
+div.header .rtext a { text-decoration: none; display: inline-block; height: 1.25em; padding-left: 0.25em; padding-right: 0.25em; }
+/* content body (menu/content) */
+div.cbody { width: 100%; margin: 0; padding: 0; position: absolute; top: 4.45em; right: 0; left: 0; bottom: 2.2em; }
+/* user menu (msg/issue/etc.) */
+.lmenu, div.umenu { width: 17em; height: 100%; white-space: nowrap; position: relative; vertical-align: top; float: left; overflow: auto; }
+div.umenu div { height: 4em; }
+div.umenu div img { position: relative; top: 0.3em; left: 0.4em; padding-right: 0.6em; float: left; }
+div.umenu div a { display: block; font-size: 1.3em; text-decoration: none; font-weight: bold; width: 100%; height: 100%; }
+div.umenu div a font { position: relative; top: 1em; left: 0.2em; }
+/* content */
+div.content { height: 100%; text-align: left; margin: auto; overflow: auto; }
+/* footer */
+div.footer { width: 100%; height: 2.3em; font-size: 10px; position: absolute; bottom: 0; padding: 0; white-space: nowrap; }
+div.footer .ltext, div.footer .ctext, div.footer .rtext { padding: 0.5em; white-space: nowrap; }
+/***** end: main description ********/
+
+/***** region: object/type description *****/
+/* listview */
+select.listview { width: 100%; font-size: 16px; white-space: nowrap; vertical-align: top; padding: 0 0.25em 0 0.25em; }
+/* checkbox */
+div.checkbox { text-align: left; }
+div.checkbox > input { width: 24px; height: 24px; cursor: pointer; }
+div.checkbox:not(#foo) > input { opacity: 0; }
+div.checkbox:not(#foo) > input + label { height: 2em; background: url(/img/unchecked.gif) 0 2px no-repeat; cursor: pointer; padding: 0.25em 0 0.25em 26px; position: absolute; left: 0; }
+div.checkbox:not(#foo) > input:checked + label { background: url(/img/checked.gif) 0 2px no-repeat; }
+/* radio */
+div.radio { text-align: left; display: inline; }
+div.radio > input { width: 24px; height: 24px; cursor: pointer;  }
+div.radio:not(#foo) > input { opacity: 0; }
+div.radio:not(#foo) > input + label { background: url(/img/unchecked.gif) 0 2px no-repeat; cursor: pointer; padding: 0.25em 0 0.25em 26px; position: relative; left: -26px; top: -0.4em; z-index: -1; }
+div.radio:not(#foo) > input:checked + label { background: url(/img/checked.gif) 0 2px no-repeat; }
+/* buttons */
+.button { cursor: pointer; width: 5em; height: 2em; }
+.button_rem { cursor: pointer; width: 5em; height: 2em; }
+/* text box */
+input.text { height: 1.5em; padding-left: 0.25em; }
+/* icons */
+img.icon { height: 2.5em; width: 2.5em; }
+/* column list display (a general column list with info) */
+div.clist { width: 20em; height: 100%; vertical-align: top; float: left; text-align: left; padding: 0; overflow: hidden; }
+/* column list item */
+.citem, .citem_current, .citem form { height: 90px; }
+.citem form, .citem_current form { padding-top: 0.5em; }
+/* a 'tree' list 'control' */
+.tree { font-size: 1.3em; white-space: nowrap; position: relative;  }
+.tree li { list-style: none; position: relative; left: -0.5em; }
+.tree li > input { cursor: pointer; display: block; position: absolute; left: -2.5em; top: 0; height: 24px; width: 24px; opacity: 0; }
+.tree li > input+label { cursor: pointer; display: block; margin-left: -1.75em; padding-left: 1.75em; height: 24px; background: url(/img/plus.gif) 0 0 no-repeat; }
+.tree li > input:checked +label { background: url(/img/minus.gif) 0 0 no-repeat; }
+.tree li > label + ol { position: relative; top: 0; cursor: pointer; }
+.tree li > a { text-decoration: none; display: block; height: 26px; margin-left: -1.75em; padding-left: 1.75em; background: url(/img/adot.gif) 0 0 no-repeat; }
+.tree li.adown > a { background: url(/img/adown.gif) 0 0 no-repeat; }
+.tree li.aup > a { background: url(/img/adown.gif) 0 0 no-repeat; }
+.tree li.aleft > a { background: url(/img/adown.gif) 0 0 no-repeat; }
+.tree li.aright > a { background: url(/img/aright.gif) 0 0 no-repeat; }
+.tree li > input+label + ol > li  { display: none; }
+.tree li > input:checked + label + ol > li { display: block; }
+.tree li > ol > li { left: -1em; }
+/***** end: object/type description ********/
+
+/***** region: classes *****/ /* Various classes used amongst the various sites */
+/* help docs */
+.hmenu font { font-size: 18px; font-weight: bold; padding-left: 0.3em; position: relative; top: 0.3em; }
+/* users */
+.uinfo { width: 100%; height: 80px; white-space: nowrap; font-size: 10px; }
+.uinfo img { float: left; width: 80px; height: 80px; }
+.uinfo_search { width: 100%; height: 60px; padding-left: 0.5em; padding-top: 0.5em; white-space: nowrap; font-size: 12px; }
+.uinfo_search select { width: 13.5em; display: inline-block; }
+.uinfo_search .uis_c { position: relative; left: -0.4em; top: 0.55em; }
+.uinfo_search .uis_b { position: relative; top: 0.5em; }
+/* user profile form display */
+div.profile form { width: 25em; padding-top:0.5em; }
+div.profile font { font-size: 16px; }
+div.profile font.lhdr { font-size: 25px;  }
+div.profile form table { width: 100%; text-align:right; }
+div.profile form input.limg { border: 0; cursor: pointer; width: 92px; height: 18px; }
+div.profile form table tr td { text-align: right; padding: 0.25em; vertical-align: middle; font-size: 14px; }
+div.profile form table tr td .text { width: 14em; font-size: 16px; }
+div.profile form table tr td select,div.profile form select { width: 14em; font-family: Consolas; font-size: 16px; }
+
+
+/* logging */
+
+/*.litem a { display: block; width: 100%; height: 100%; text-decoration: none; font-size: 14px; }*/
+.litem { height: 4.2em; padding-left: 0.5em; font-size: 14px; position: relative; }
+.litem input { cursor: pointer; width: 100%; height: 100%; border: none; background: none; color: transparent; display: block; font-size: 0; line-height: 0; }
+.litem input, .litem label { position: absolute; top: 0; left: 0; }
+.litem label font { font-size: 10px; }
+
+
+/* log content main pane */
+.log_content { margin-left: 20em; height: 100%; vertical-align: top; text-align: left; position: relative; overflow: hidden; }
+/* log header/info/buttons */
+.loghdr { width: 100%; overflow-x: auto; }
+.loghdr > table { width: 100%; overflow: hidden; }
+.loginf { padding-left: 0.25em; font-size: 1.3em; white-space: nowrap; width: 50%; }
+.logbtns { padding-right: 0.25em; white-space: nowrap; width: 50%; vertical-align: top; }
+.logbtns > div { width: 24em; height: 100%; position: relative; float: right; }
+.logrbtn { white-space: nowrap; }
+.logrbtn > div { position: relative; top: 0.4em; right: 0.25em; height: 2.25em; text-align: right; }
+.logrbtn > div form > div, .logrbtn > div > div { width: 5em; display: inline-block; position: relative; right: 1.5em; }
+.logrbtn > div form > input { width: 4.65em; display: inline-block; position: absolute; top: -0.25em; right: 15.75em; }
+
+
+/* log clear button(s) */
+.logcbtn { width: auto; position: absolute; top: 2.6em; right: 0.5em; }
+.logclear > input { display: none; } /*hide checkbox*/
+.logclear > input+label { cursor: pointer; display: block; height: 2em; width: 5em; }
+.logclear > input+label > font { position: relative; top: 0.4em; left: 1.4em; }
+.logclear > input:checked + label > font { display: none; } /* hide and replace text with 'Cancel' */
+.logclear > input:checked + label:after { content: "Cancel"; position: relative; top: 0.4em; left: 1em; }
+
+.logclear > input+label + form > div {
+    visibility: hidden;
+    text-align: right;
+    width: 17em;
+    height: 2em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: bold; 
+    color: #FF5050;
+    z-index: -1;
+    opacity: 0;
+    transition: visibility 0.5s, right 0.5s, opacity 0.5s;
+    -webkit-transition: visibility 0.5s, right 0.5s, opacity 0.5s;
+}
+.logclear > input:checked + label + form > div { visibility: visible; right: 5.75em; z-index: 1; opacity: 1; }
+
+
+.logclear > input+label + form > div > input { width: 4.65em; height: 2em; }
+
+/* log view panel */
+.logview { position: absolute; top:6.25em; left:0; right: 0; bottom: 0; overflow: hidden; }
+.logview > div { position: absolute; top:0; left:0; right: 0; bottom: 0; overflow: auto; }
+.logview .noent { border: none; width: auto; padding-left: 0.25em; font-size: 20px; }
+/* log entry lines */
+.logentry { height: auto; width: 100%; display: table; }
+.logentry div { border-right: 1px solid #CACACA; border-bottom: 1px solid #CACACA; padding-left: 0.5em; padding-right: 0.5em; }
+.logentry > div { display: table-row; }
+.logentry > div > div { display: table-cell; }
+.logentry > div > div:first-child { border-left: none; text-align: center; }
+.logentry > div > div:last-child { border-right: none; }
+/* error.log */
+.log_error > div > div:first-child + div { width: 12em; white-space: nowrap; }
+.log_error > div > div:first-child + div + div { width: 12em; white-space: nowrap; }
+/* access.log */
+.log_access > div > div:first-child + div { width: 14em; white-space: nowrap; }
+.log_access > div > div:first-child + div + div { width: 6em; white-space: nowrap; }
+/* user.log */
+.log_user > div > div:first-child + div  { width: 12em; white-space: nowrap; }
+.log_user > div > div:first-child + div + div { width: 12em; white-space: nowrap; }
+/* smbd.log .. TODO: finish this */
+.log_smbd > div > div:first-child + div  { width: 11em; white-space: nowrap; }
+.log_smbd > div > div:first-child + div + div { width: 10em; white-space: nowrap; }
+/* sql.log .. TODO: finish this */
+.log_sql > div > div:first-child + div  { width: 11em; white-space: nowrap; }
+.log_sql > div > div:first-child + div + div { width: 10em; white-space: nowrap; }
+/***** end: classes ********/
+
+/***** region: theme elements *****/
+/* font-family */
+body, table { font-family: Tahoma, Geneva, sans-serif; }
+code, .code, .logentry div { font-family: Consolas, Courier, monospace; }
+div.profile font.lhdr, div.profile table, div.profile form table tr td .text,
+.ltext, .ctext, .rtext, select.listview, .button, .button_rem, input.text { font-family: Tahoma, Geneva, Consolas, Courier, sans-serif; }
+/* color theme options for the appearance (some overridden in the specific color theme); note that these must be last in the file to ensure propagation */
+/* header */
+div.header { border-bottom: 2px solid #5C81A3; }
+div.header .ltext { text-shadow: 2px 2px 3px rgba(100, 100, 100, 0.8); }
+/* user menu */
+div.umenu { border-right: 1px solid #5C81A3; }
+div.umenu div.current, div.umenu div a:hover { text-shadow: 1px 1px 1px rgba(0,0,0,0.4); }
+/* footer */
+div.footer { border-top: 2px solid #5C81A3; }
+/* listview */
+select.listview option:hover { background-color: #5C81A3; }
+select.listview option { text-shadow: 1px 1px 1px rgba(0,0,0,0.4); }
+/* checkbox */
+div.checkbox > input { border: 1px solid #3398D9; background: #FF5050; color: #FF5050; }
+div.checkbox > input:checked { background: #58F159; color: #58F159; }
+/* radio */
+div.radio > input { border: 1px solid #3398D9; background: #FF5050; color: #FF5050; }
+div.radio > input:checked { background: #58F159; color: #55FF55; }
+/* buttons */
+.button { background: #5BB7F1; color: #060606; border: 1px solid black; text-shadow: 1px 1px 2px rgba(125, 125, 125, 1); border-radius: 0.25em; }
+.button:hover { background: #2388C9; }
+.button_rem { background: #FF5050; color: #490309; border: 1px solid black; text-shadow: 1px 1px 2px rgba(125, 125, 125, 1); border-radius: 0.25em; }
+.button_rem:hover { background: #FF7070; }
+/* text box */
+input.text { background-color: #FAFAFA; border: 1px solid #000000; text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.5); border-radius: 0.2em; }
+/* drop down */
+select.dropdown { text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.5); border-radius: 0.1em; }
+/* generic border(s) */
+.b_left { border-left: 1px solid #5C81A3; }
+.b_right { border-right: 1px solid #5C81A3; }
+.b_top { border-top: 1px solid #5C81A3; }
+.b_bottom { border-bottom: 1px solid #5C81A3; }
+.b_all { border: 1px solid #5C81A3; }
+
+/* misc. elements */
+div.profile form table { border: 1px solid #5C81A3; }
+/***** end: theme elements ********/

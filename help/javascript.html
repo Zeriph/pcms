@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>PCMS - Help Documentation: JavaScript.</title><link rel="stylesheet" type="text/css" href="../css/main.css" /><link rel="stylesheet" type="text/css" href="../css/dark.css" />
+<script type="text/javascript" src="../js/common.js"></script></head><body><div class="main"><div class="header"><div class="ltext">PCMS Help Documentation</div>
+<div class="rtext"><a href="../index.php">PCMS Login</a></div></div><div class="cbody"><div class="lmenu b_right hmenu"><font>PCMS Help Sections</font><ol class="tree"><li><a href="index.html">About PCMS</a></li>
+<li><input type="checkbox" id="profile" name="profile" /><label for="profile">Profile Management</label><ol><li><a href="profile.html">About This Section</a></li></ol></li>
+<li><input type="checkbox" id="issues" name="issues" /><label for="issues">Issue Management</label><ol><li><a href="issues.html">About This Section</a></li></ol></li>
+<li><input type="checkbox" id="messages" name="messages" /><label for="messages">User Messages</label><ol><li><a href="messages.html">About This Section</a></li></ol></li>
+<li><input type="checkbox" id="chat" name="chat" /><label for="chat">Local Chat</label><ol><li><a href="chat.html">About This Section</a></li></ol></li>
+<li><input type="checkbox" id="assets" name="assets" /><label for="assets">Asset Management</label><ol><li><a href="assets.html">About This Section</a></li></ol></li>
+<li><input type="checkbox" id="repo" name="repo" /><label for="repo">File Repository</label><ol><li><a href="repo.html">About This Section</a></li></ol></li>
+<li><input type="checkbox" id="time" name="time" /><label for="time">Time Sheet</label><ol><li><a href="time.html">About This Section</a></li></ol></li>
+<li><input type="checkbox" id="reports" name="reports" /><label for="reports">Report Generation</label><ol><li><a href="reports.html">About This Section</a></li></ol></li>
+<li><input type="checkbox" id="invoice" name="invoice" /><label for="invoice">Invoice Management</label><ol><li><a href="invoice.html">About This Section</a></li></ol></li>
+<li><input type="checkbox" id="projects" name="projects" /><label for="projects">Project Management</label><ol><li><a href="projects.html">About This Section</a></li></ol></li>
+<li><input type="checkbox" id="users" name="users" /><label for="users">Personnel Management</label><ol><li><a href="users.html">About This Section</a></li></ol></li>
+<li><input type="checkbox" id="logs" name="logs" /><label for="logs">Log Viewer</label><ol><li><a href="logs.html">About This Section</a></li></ol></li>
+<li><input type="checkbox" id="server" name="server" /><label for="server">Server Management</label><ol><li><a href="server.html">About This Section</a></li></ol></li>
+<li><input type="checkbox" id="tterms" name="tterms" checked /><label for="tterms">Technical Terms</label><ol><li class="aright"><a href="javascript.html">JavaScript</a></li>
+<li><a href="css.html">CSS</a></li></ol></li></ol></div><div class="content" style="padding-left:0.5em;">
+<!-- start content -->
+<font style="font-size:24px;">What is JavaScript?</font><br>
+JavaScript is a programming language that is primarily used in web sites to allow the site to deliver a more dynamic experience.<br><br><br>
+<font style="font-size:24px;">What does this mean exactly and why do I need to "enable" JavaScript?</font><br>
+When you go to a web site you are actually downloading a file from a server that your web browser parses. Your browser will parse and display the information described in the file according the standards
+set forth by certain organizations; in the case of a web site, this is the HTML specification. HTML stands for <i>Hyper Text Markup Language</i> and defines how a web site presents
+information to the user as well as how information from the user is sent to the server, as in the case of a user logging in to a web site.<br><br>
+The HTML specification does not define certain elements within it to allow dynamic content itself (not without refreshing the page that is); in other words, HTML itself does not have syntax within it to
+allow a developer to build and display a slide show (for instance) that automatically changes the pictures every few seconds <i>without</i> refreshing the page or navigating the user away from the site.
+As one could imagine, it can break the flow of a web site if you have to constantly navigate away from the page or refresh the page every few seconds to be able to see the updated content.
+To this, there are various ways a website can generate content on the page without having to navigate away from the page or refresh it, one of which is the JavaScript language; a separate language from HTML
+that has a separate set of standards and completely different set of syntax. JavaScript can be included directly within the HTML or as a separate file that is downloaded, parsed and included where
+applicable by the web browser within a site.<br><br>
+JavaScript allows a web browser to change the content of a page more dynamically and more fluidly than basic HTML alone can. It can allow a web site developer to redraw a certain portion of the page or
+change the text, like updating the time on a web site. It can also allow web sites to hide certain nefarious things easier than basic HTML will allow as well, for instance, a nefarious site could hide
+an HTML element known as an IFRAME that within it has JavaScript that redirects that IFRAME to go to a "bad" site and download/run other nefarious code, all while displaying the "good" page to the user.
+Those are just a couple of the more random examples of what JavaScript can be used to do.<br><br>
+As such, JavaScript is usually encouraged to be disabled by default and only allow it on trusted web sites, like your bank's website. Depending on your browser, there might only be an "allow all" option,
+which by default will allow JavaScript on any site, or you might be able to selectively choose which sites can run JavaScript. Due to the ever changing nature of software and web browsers, it is beyond the scope
+of this help section to guide you through enabling JavaScript on your particular web browser, however, the help documentation of your web browser should have a section on enabling JavaScript.<br><br><br>
+<font style="font-size:24px;">So why does PCMS need JavaScript?</font><br>
+While we at Zeriph believe in being as universally digitally accessible as possible, which means trying to keep things as simple as possible, we also try not to sacrifice form over function where conceivable.
+We tried to enable as much dynamic content as possible without the use of JavaScript to allow less strain on the web browser as well to be as accessible as possible, however, there are portions of the site that
+would break the flow of the site or end up in a confused user had we not used JavaScript. Being that the audience and users of this web application will most likely have a modern visual web browser that supports
+JavaScript (unlike some text only web browsers), we opted to utilize JavaScript (along with <a href="css.html">CSS</a>) to help deliver a more fluid site to the user. That is not to say that JavaScript is absolutely required by this web
+application, merely that certain functions of this site might not look or work as one might expect if JavaScript is not enabled.<br><br>
+As one example, when the user menu (the menu on the left) is generated and drawn, it is possible that there might be more visible tiles
+than there is screen space and a scroll bar will appear to allow the user to scroll down and see all the menu items (this is due to the <a href="css.html">CSS</a> we employ and will happen regardless of JavaScript).
+If the user selects a menu item that is at the bottom of the list, when the browser navigates to this page the user menu will be generated and, through the use of JavaScript, the user menu is scrolled down to show
+that the user is on the correct selected menu item. <i>Without</i> JavaScript enabled, the user will see the correct page and the menu item will be highlighted but it will not be in view unless they scroll
+down themselves, thus leading to possible confusion (i.e. "why is my menu not showing that I'm on the correct page?"). While it might be something simple, that's wasted time that could be avoided by simply displaying
+what is expected by the user, in other words, we elected to use JavaScript where conceivable to not break the form of the site simply for the functionality of it.
+<!-- end content -->
+</div></div><div class="footer"><div class="ltext">(C) <a href="http://zeriph.com/">Zeriph Enterprises LLC</a></div><div class="rtext">version: 1.0a</div></div></div></body></html>

@@ -1,0 +1,81 @@
+/* NOTE: if you are viewing this on your HDD (or intranet) and vieing in IE with compatability mode,
+this tree CSS will not work properly, you must go to 'Tools->Compatibility View Settings' and uncheck
+'Display intranet sites in Compatibility View' */
+
+/* CSS Tree menu styles thanks from CSS Ninja (http://www.thecssninja.com/css/css-tree-menu) */
+.clstree {
+    font-size: 12px;
+    font-family: Consolas, Courier, Arial, Tahoma, DroidSansRegular, serif;
+    white-space: nowrap;
+    position: relative;
+    left: -3.4em;
+    top: -3em;
+}
+.clstree li { position: relative; list-style: none; }
+
+/* namespace/class/struct/member */
+.clstree li.ns, .clstree li.cls, .clstree li.strct, .clstree li.eval, .clstree li.ctor, .clstree li.dtor, .clstree li.mbr, .clstree li.fn, .clstree li.tdef { margin-left: -1px !important; }
+.clstree li.ns a, .clstree li.cls a, .clstree li.strct a, .clstree li.eval a, .clstree li.ctor a, .clstree li.dtor a, .clstree li.mbr a, .clstree li.fn a, .clstree li.tdef a
+{
+    color: #000;
+    padding-left: 1.5em;
+    text-decoration: none;
+    display: block;
+}
+.clstree li.ns a    { background: url(ns.gif) 0 0.1em no-repeat; }
+.clstree li.cls a  { background: url(cls.gif) 0 0 no-repeat; }
+.clstree li.strct a { background: url(strct.gif) 0 0 no-repeat; }
+.clstree li.eval a { background: url(eval.gif) 0 0 no-repeat; }
+.clstree li.ctor a { background: url(ctor.gif) 0 0 no-repeat; }
+.clstree li.dtor a { background: url(dtor.gif) 0 0 no-repeat; }
+.clstree li.fn a     { background: url(fn.gif) 0 0.1em no-repeat; }
+.clstree li.mbr a   { background: url(mbr.gif) 0 0 no-repeat; }
+.clstree li.tdef a { background: url(tdef.gif) 0 0 no-repeat; }
+
+/* file/folder/cxx/cpp/hpp */
+.clstree li.file,.clstree li.fldr,.clstree li.cpp,.clstree li.hpp,.clstree li.cxx  { margin-left: -1px !important; }
+.clstree li.file a,.clstree li.fldr a,.clstree li.cxx a,.clstree li.cpp a,.clstree li.hpp a
+{
+    color: #000;
+    padding-left: 1.8em;
+    text-decoration: none;
+    display: block;
+}
+.clstree li.fldr label { background: url(fldr.gif) 1.5em 0 no-repeat; padding-left: 3em; }
+.clstree li.file a { background: url(file.gif) 0 0 no-repeat; padding-left: 1.5em; }
+.clstree li.cxx a { background: url(cxx.gif) 0.3em 0 no-repeat; padding-left: 1.8em; }
+.clstree li.hpp a { background: url(hpp.gif) 0.5em 0 no-repeat; padding-left: 1.8em; }
+.clstree li.cpp a { background: url(cpp.gif) 0.2em 0 no-repeat; padding-left: 1.7em; }
+.clstree li.file div,.clstree li.cxx div,.clstree li.hpp div,.clstree li.cpp div { position: absolute; right: 0; text-align: right; }
+.clstree li.file div.dt,.clstree li.cxx div.dt,.clstree li.hpp div.dt,.clstree li.cpp div.dt { position: absolute; right: 6em; text-align: right; }
+
+/* checkbox label for +/- */
+.clstree li input { position: absolute; left: 0; margin-left: 0; z-index: 2; cursor: pointer; height: 1em; width: 1em; top: 0; opacity: 0; }
+.clstree li input+ol
+{
+    background: url(pls.gif) 3.265em 0.2em no-repeat;
+    margin: -1.3em 0 0 -3.1em;
+    padding: 1.3em 0 0 4.35em;
+    height: auto;
+}
+.clstree li input+ol>li  { display: none; margin-top: 0 !important; margin-left: -14px !important; }
+.clstree li input:checked+ol
+{
+    background: url(min.gif) 3.265em 0.2em no-repeat;
+    margin: -1.3em 0 0 -3.1em;
+    padding: 1.3em 0 0 4.35em;
+    height: auto;
+}
+.clstree li input:checked+ol>li { display: block; margin: 0 0 0 0.125em; }
+.clstree li input:checked+ol>li:last-child { margin: 0 0 0 0.063em; }
+.clstree li label { cursor: pointer; display: block; padding-left: 15px; width: 16px; }
+.clstree li.ctor, .clstree li.dtor, .clstree li.mbr, .clstree li.fn , .clstree li.tdef { padding-left: 15px; width: 16px; }
+
+/* expa/cola for sub items */
+.clstree img.cola, .clstree img.expa { cursor: pointer; position: absolute; margin-top: -1.2em; }
+
+/* for expand all functionality */
+div.expa, div.cola { position: relative; cursor: pointer; text-align: right; z-index: 10; }
+div.expa { background: url(expa.gif) 0 0.1em no-repeat; width: 5.8em; }
+div.cola { background: url(cola.gif) 0 0.1em no-repeat; width: 6.1em; top: -1.25em; left: 6.5em; }
+

@@ -1,0 +1,50 @@
+.tab-pane { /* The main pane*/
+	position: relative;
+	width: 100%;
+	margin-right: -2px;
+}
+
+.tab, .tabSelected, .tabHover { /* The Tab Itself */
+	background-repeat: no-repeat;
+	border: 0;
+	cursor: default;
+	display: inline;
+	font-family: Calibri, Arial, "Times New Roman", serif;
+	font-size: 14px;
+	font-weight: bold;
+	float: left;
+	height: 16px;
+	margin: 1px -1px 1px 2px;
+	overflow: hidden;
+	padding: 2px 0px 0px 0px;
+	position: relative; 
+	top: 0;
+	text-align: center; 
+	width: 100px;
+}
+
+.tab {
+	background-image: url( "../_images/tab.png" );
+}
+
+.tabSelected, .tabHover { /* The tab when it's selected */
+	background-image: url( "../_images/tab_hover.png" );
+}
+
+.panel, .panelHidden { /* The Tab Panel (where the content goes) */
+	border: 1px solid rgb( 145, 155, 156 );
+	background-color: white; 
+	font-family: Calibri, Arial, "Times New Roman", serif;
+	font-size: 14px;
+	left: 2px; 
+	margin: 0px; 
+	padding: 6px;
+	position: absolute; 
+	top: 18px;
+	/*width: 100%;*/
+}
+
+.panelHidden { /* The tab panel when its not selected */
+	display: none;
+	z-index: 0;
+}

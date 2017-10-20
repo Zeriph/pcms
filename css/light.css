@@ -1,0 +1,20 @@
+/*** The following are the color theme options for the light theme ***/
+
+/*** main ***/
+body { background-color: #DADADA; }
+body, body a { color: #353535; }
+/*** header ***/
+div.header .rtext, div.header .rtext a { color: #353535; }
+/*** user menu ***/
+div.umenu div a { color: #353535; }
+div.umenu div a:hover { color: #BABABA; }
+div.umenu div.current, div.umenu div.current a, div.umenu div:hover { background: #555555; color: #DDDDDD; }
+/*** listview ***/
+select.listview { border: 1px solid #ACACAC; background-color: #DADADA; }
+select.listview, select.listview option { color: #353535; }
+/*** drop down ***/
+select.dropdown { border: 1px solid #ACACAC; background-color: #DADADA; }
+select.dropdown, select.dropdown option { color: #353535; }
+/*** column item display ***/
+.citem:hover { color: #353535; }
+.citem_current, .citem:hover { background: #555555; color: #DDDDDD; }
